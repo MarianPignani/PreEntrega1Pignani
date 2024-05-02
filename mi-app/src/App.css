@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -61,7 +62,7 @@ span {
 
 .menu {
     text-decoration: none;
-    color: black;
+    color: rgb(0, 0, 0);
     padding-left: 20px;
     padding-right: 20px;
     font-weight: bold;
@@ -71,4 +72,104 @@ span {
     
 .menu:hover {
     color: white;
+}
+
+.div-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-gap: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(218, 218, 218);
+}
+
+
+.cont-prod {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 25px;
+    display: grid;
+    grid-gap:15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(139, 164, 172);
+    box-shadow: 0 0 12px rgb(146, 146, 146);
+    transition: 1s;
+    cursor: pointer;
+}
+
+.cont-prod:hover {
+    transform: scale(1.03);
+}
+
+.img-prod {
+    width: 240px;
+    border-radius: 25px;
+}
+
+Link {
+    text-decoration: none;
+}
+
+.cont-detail {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-detail {
+    width: 750px;
+    padding: 30px;
+    height: auto;
+    display: flex;
+    gap: 30px;
+    border-radius: 25px;
+    background-color: rgb(139, 164, 172);
+    box-shadow: 0 0 12px rgb(146, 146, 146);
+    transition: 1s;
+    cursor: pointer;
+}
+
+.div-detail:hover {
+    transform: scale(1.03);
+}
+
+.div-right {
+    width: 400px;
+}
+
+.precio-detail {
+    padding-top: 8px;
+}
+
+.descripcion {
+    padding-top: 8px;
+}
+
+.div-footer {
+    width: 100%;
+    background-color: black;
+    justify-content: center;
+    text-align: center;
+}
+
+.div-img {
+    width: 100%;
+}
+
+.div-copy {
+    background-color: rgb(15, 15, 15);
+    display: flex;
+    width: 100%;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.copy {
+    color: rgb(124, 124, 124);
 }
