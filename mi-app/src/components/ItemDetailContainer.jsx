@@ -1,33 +1,33 @@
-import { useEffect, useState } from "react";
-import arrayProductos from "./json/productos.json"
+import { useEffect, useState } from "react"
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase/config";
 
-const ItemListContainer = () => {
-    const [item, setItem] = useState([]);
-    const {id} = useParams();
 
-    useEffect (() => {
-        const promesa = new Promise(resolve => {
-            setTimeout(() => {
-                const producto = arrayProductos.find(item => item.id == id)
-                resolve(producto);
-            }, 2000)
-        });
+const ItemDetailContainer = () => {
 
-        promesa.then (respuesta => {
-            setItem(respuesta);
+    const [item, setItem] = useState(null);
+    const id = useParams().id;
+
+    useEffect(() => {
+
+      const docRef = doc(db, "productos", id);
+      getDoc(docRef)
+        .then((resp) => {
+          setItem(
+            { ...resp.data(), id: resp.id }
+          );
         })
+
     }, [id])
     
-    
-    return (
-        <div className="container">
-            <div className="div-container">
-                <ItemDetail item={item} />
-            </div>
-        </div>
-    )
+
+  return (
+    <div>
+        {item && <ItemDetail item={item} />}
+    </div>
+  )
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer
